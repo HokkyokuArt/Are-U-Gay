@@ -1,0 +1,122 @@
+$btn-width: 100px;
+
+.wraper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    width: $btn-width;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: rgb(58, 83, 83);
+    position: absolute;
+    font-size: 24px;
+}
+
+
+#no {
+    transition: .3s cubic-bezier(0, .98, .63, .97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+}
+
+#no::after {
+    content: 'MAN, just accept the fact';
+    top: -108px;
+    left: 50%;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 5px solid rgb(58, 83, 83);
+    display: none;
+}
+
+
+#no::before {
+    content: '';
+    top: -20px;
+    left: 65%;
+    border-left: 20px solid rgb(58, 83, 83);
+    border-bottom: 13px solid transparent;
+    position: absolute;
+    display: none;
+}
+
+#no.mostraBg::after,
+#no.mostraBg::before {
+    display: block;
+    z-index: 2000;
+}
+
+.effect {
+    overflow: hidden;
+    transition: width .3s linear;
+    cursor: pointer;
+}
+
+#yes {
+    width: max-content;
+    height: 100%;
+    display: flex;
+}
+
+.effect:hover {
+    filter: grayscale(50%);
+}
+
+
+p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.a {
+    width: $btn-width;
+}
+
+.b {
+    padding-right: 20px;
+}
+
+.effect.rainbowYes {
+    z-index: 1000;
+    width: calc($btn-width + 260px);
+}
+
+.rainbowYes,
+.rainbow::after {
+    background: linear-gradient(-90deg, red, green, aqua);
+    animation: hue 3s linear infinite;
+    filter: hue-rotate(0);
+}
+
+@keyframes hue {
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
