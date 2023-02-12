@@ -1,6 +1,6 @@
 import AreUGay from 'components/Form/AreUGay';
 import { useEffect, useState } from 'react';
-import './backGround.scss';
+import './background.scss';
 import { getRandomInt } from 'components/Form/AreUGayService';
 
 import bgs from 'assets/background.json';
