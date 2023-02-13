@@ -39,7 +39,9 @@ const AreUGay = ({ mostraBg, setMostraBg }: { mostraBg: boolean, setMostraBg: Re
           className='btn rainbow'
           style={{ transform: `translate(${position.x}px, ${position.y}px )` }}
           onMouseOver={({ nativeEvent, target }) => handleNoMouseOver(nativeEvent, target as Element)}
-        >
+          onClick={({ nativeEvent, target }) => handleNoMouseOver(nativeEvent, target as Element)}
+          
+       >
           Nop
         </button>
       </div>
